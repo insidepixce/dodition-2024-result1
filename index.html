@@ -52,6 +52,7 @@
             transition: background-color 0.3s ease;
             text-decoration: none; /* 추가 */
             display: inline-block; /* 추가 */
+            margin-top: 10px;
         }
         button:hover {
             background-color: #c62828; /* 빨간색 계열 */
@@ -60,12 +61,13 @@
             font-size: 18px;
             margin-top: 20px;
         }
-        .success-box {
+        .success-box, .failure-box {
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             padding: 40px;
             margin: 20px auto;
             max-width: 600px;
+            display: none;
         }
     </style>
 </head>
@@ -82,9 +84,14 @@
         도디션 관리자 계정으로 제출하신 도아너 분들은 도디션 관리자 계정으로 한 번 더 메세지 주시면 합불 결과 알려드리도록 하겠습니다.</p>
     </div>
 
-    <div class="success-box" id="successBox" style="display: none;">
+    <div class="success-box" id="successBox">
         <h2 style="color: black;">합격입니다!</h2>
         <a href="https://forms.gle/Wd7bPmn3zxSfQMDN8"><button>다음 미션 보러가기</button></a>
+    </div>
+
+    <div class="failure-box" id="failureBox">
+        <h2 style="color: black;">아쉽지만 탈락입니다.</h2>
+        <a href="https://forms.gle/PYaeZmue74xAvMK86"><button>패자부활전 신청하기</button></a>
     </div>
 
     <script>
@@ -92,6 +99,7 @@
         const linkInput = document.getElementById('linkInput');
         const resultMessage = document.getElementById('result');
         const successBox = document.getElementById('successBox');
+        const failureBox = document.getElementById('failureBox');
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -126,7 +134,8 @@
             if (isValidLink) {
                 successBox.style.display = "block";
             } else {
-                resultMessage.textContent = "합격이 아닙니다.";
+                failureBox.style.display = "block";
+                resultMessage.textContent = "탈락입니다.";
             }
         });
     </script>
