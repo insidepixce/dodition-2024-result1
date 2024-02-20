@@ -6,6 +6,68 @@
     <title>참가자 목록</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            background-image: url('main.JPG');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Poor Story', sans-serif;
+            text-align: center;
+            color: black;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        h2, p, #result, #welcome {
+            color: black;
+        }
+        #form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        #linkInput {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+            font-family: 'Poor Story', sans-serif;
+            font-size: 16px;
+        }
+        #linkInput::placeholder {
+            color: #aaa;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #99ccff; /* 빨간색 계열 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none; /* 추가 */
+            display: inline-block; /* 추가 */
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #99ccff; /* 빨간색 계열 */
+        }
+        #welcome {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .success-box, .failure-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 600px;
+            display: none;
+        }
+
         html, body {
             height: 100%;
             display: flex;
