@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>참가자 목록</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html, body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>참가자 목록(현재 생존자 명단)</h2>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('01')">01</a></td>
+                <td>가은</td>
+                <td><a href="#" onclick="showNumber('02')">02</a></td>
+                <td>로하</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('03')">03</a></td>
+                <td>규</td>
+                <td><a href="#" onclick="showNumber('04')">04</a></td>
+                <td>김단쵸</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('05')">05</a></td>
+                <td>우연</td>
+                <td><a href="#" onclick="showNumber('06')">06</a></td>
+                <td>채현</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('07')">07</a></td>
+                <td>레설</td>
+                <td><a href="#" onclick="showNumber('08')">08</a></td>
+                <td>레원</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('09')">09</a></td>
+                <td>밍키</td>
+                <td><a href="#" onclick="showNumber('10')">10</a></td>
+                <td>홍씨</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('11')">11</a></td>
+                <td>다인</td>
+                <td><a href="#" onclick="showNumber('12')">12</a></td>
+                <td>밍설</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('13')">13</a></td>
+                <td>마토</td>
+                <td><a href="#" onclick="showNumber('14')">14</a></td>
+                <td>망굼이자공백</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('15')">15</a></td>
+                <td>보아</td>
+                <td><a href="#" onclick="showNumber('16')">16</a></td>
+                <td>뽀잉</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('17')">17</a></td>
+                <td>유아</td>
+                <td><a href="#" onclick="showNumber('18')">18</a></td>
+                <td>설빈</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('19')">19</a></td>
+                <td>아이브 여섯명의 약혼녀</td>
+                <td><a href="#" onclick="showNumber('20')">20</a></td>
+                <td>오트 채은</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('36')">21</a></td>
+                <td>밍서</td>
+                <td><a href="#" onclick="showNumber('22')">22</a></td>
+                <td>유키</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('23')">23</a></td>
+                <td>이브</td>
+                <td><a href="#" onclick="showNumber('24')">24</a></td>
+                <td>솔방울</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('25')">25</a></td>
+                <td>체리+특문</td>
+                <td><a href="#" onclick="showNumber('26')">26</a></td>
+                <td>체리</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('27')">27</a></td>
+                <td>최헬린</td>
+                <td><a href="#" onclick="showNumber('28')">28</a></td>
+                <td>유이브</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('29')">29</a></td>
+                <td>키레</td>
+                <td><a href="#" onclick="showNumber('30')">30</a></td>
+                <td>팥옹심이이다</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('31')">31</a></td>
+                <td>푸름이</td>
+                <td><a href="#" onclick="showNumber('32')">32</a></td>
+                <td>하늘 쨩</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('33')">33</a></td>
+                <td>예니</td>
+                <td><a href="#" onclick="showNumber('34')">34</a></td>
+                <td>김단쵸</td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="showNumber('35')">35</a></td>
+                <td>레유</td>
+
+            </tr>
+        </table>
+        <button onclick="window.location.href = 'index.html';">뒤로가기</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="participantNumber"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

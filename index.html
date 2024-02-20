@@ -3,141 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도디션 2024 1차 결과 확인</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbpD8j6%2FbtrLkuIcfY6%2FfbElvtjKPFwUPsN5yFt3sK%2Fimg.jpg');
-            background-size: cover;
-            background-position: center;
-            font-family: 'Poor Story', sans-serif;
-            text-align: center;
-            color: black;
-        }
-        .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-        }
-        h2, p, #result, #welcome {
-            color: black;
-        }
-        #form {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        #linkInput {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            width: 300px;
-            font-family: 'Poor Story', sans-serif;
-            font-size: 16px;
-        }
-        #linkInput::placeholder {
-            color: #aaa;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #e53935; /* 빨간색 계열 */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none; /* 추가 */
-            display: inline-block; /* 추가 */
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #c62828; /* 빨간색 계열 */
-        }
-        #welcome {
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        .success-box, .failure-box {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            padding: 40px;
-            margin: 20px auto;
-            max-width: 600px;
-            display: none;
-        }
-    </style>
+    <title>도디션 2024 공식 사이트</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h2 style="font-weight: bold;">도디션 2024 1차 결과 확인</h2>
-        <p>구글 폼 제출 때 업로드했던 오픈채팅 링크를 입력하세요.</p>
-        <form id="form">
-            <input type="text" id="linkInput" placeholder="링크를 입력하세요...">
-            <button type="submit">확인</button>
-        </form>
-        <p id="result"></p>
-        <p id="welcome">도디션에 참여하신 도아너 여러분들 모두 환영합니다!<br>
-        도디션 관리자 계정으로 제출하신 도아너 분들은 도디션 관리자 계정으로 한 번 더 메세지 주시면 합불 결과 알려드리도록 하겠습니다.</p>
+        <h1>도디션 2024 공식 사이트</h1>
+        <nav class="navbar">
+            <a href="results.html">1라운드 결과 발표</a>
+            <a href="participants.html">참가번호 조회하기</a>
+            <a href="https://forms.gle/PYaeZmue74xAvMK86">1차 패자부활전</a>
+            <a href="upgrade.html">일정 안내</a>
+        </nav>
     </div>
-
-    <div class="success-box" id="successBox">
-        <h2 style="color: black;">합격입니다!</h2>
-        <a href="https://forms.gle/Wd7bPmn3zxSfQMDN8"><button>다음 미션 보러가기</button></a>
-    </div>
-
-    <div class="failure-box" id="failureBox">
-        <h2 style="color: black;">아쉽지만 탈락입니다.</h2>
-        <a href="https://forms.gle/PYaeZmue74xAvMK86"><button>패자부활전 신청하기</button></a>
-    </div>
-
-    <script>
-        const form = document.getElementById('form');
-        const linkInput = document.getElementById('linkInput');
-        const resultMessage = document.getElementById('result');
-        const successBox = document.getElementById('successBox');
-        const failureBox = document.getElementById('failureBox');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const inputLink = linkInput.value.trim();
-            const links = [
-                "https://open.kakao.com/o/s9o0oZSf",
-                "https://open.kakao.com/me/yuki_xnn",
-                "https://open.kakao.com/o/skgl0iGf",
-                "https://open.kakao.com/me/lovedive_O7",
-                "https://open.kakao.com/o/s7vBHX3f",
-                "https://open.kakao.com/o/sUgKIVRe",
-                "https://open.kakao.com/o/sZhpJBWf",
-                "https://open.kakao.com/o/s6wo7G6f",
-                "https://open.kakao.com/me/Lucky_Hong",
-                "https://open.kakao.com/o/sZOsZStf",
-                "https://open.kakao.com/o/sypT01Ed",
-                "https://open.kakao.com/o/spfG9IZd",
-                "https://open.kakao.com/o/sOz0KWNf",
-                "https://open.kakao.com/o/syHQVn8f",
-                "https://open.kakao.com/o/sxTAQ7Pf",
-                "https://open.kakao.com/o/sjLB6SIe",
-                "https://open.kakao.com/me/Gaeunn",
-                "https://open.kakao.com/o/s7WWLRse",
-                "https://open.kakao.com/o/s1wYgATf",
-                "https://open.kakao.com/o/s8aJKTZf",
-                "https://open.kakao.com/o/sli89WCf",
-                "https://open.kakao.com/o/sli89WCf",
-                "https://open.kakao.com/me/Leet0221",
-                "https://open.kakao.com/o/sIIn7R9c"
-            ];
-            const isValidLink = links.includes(inputLink);
-            if (isValidLink) {
-                successBox.style.display = "block";
-            } else {
-                failureBox.style.display = "block";
-                resultMessage.textContent = "탈락입니다.";
-            }
-        });
-    </script>
 </body>
 </html>
