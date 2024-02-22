@@ -28,26 +28,42 @@
             margin-bottom: 20px;
         }
         .navbar {
-            background-color: #f8f9fa; /* 배경색은 같게 */
-            border-radius: 10px;
-            padding: 10px;
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .navbar a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: #99ccff; /* 배경색은 같게 */
-            transition: background-color 0.3s;
-        }
-        .navbar a:hover {
-            background-color: #007bff;
-            color: white;
-        }
+    background-color: #f8f9fa; /* 배경색은 같게 */
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* 화면이 작아질 때 줄 바꿈을 하도록 설정 */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #99ccff; /* 배경색은 같게 */
+    transition: background-color 0.3s;
+    margin: 5px; /* 각 링크 사이의 간격을 설정 */
+}
+
+.navbar a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 미디어 쿼리 추가 */
+@media screen and (max-width: 600px) {
+    .navbar {
+        padding: 5px; /* 작은 화면에서 네브바의 padding 조정 */
+    }
+
+    .navbar a {
+        padding: 8px 12px; /* 작은 화면에서 링크의 padding 조정 */
+        font-size: 14px; /* 작은 화면에서 링크의 글꼴 크기 조정 */
+    }
+}
     </style>
 </head>
 <body>
