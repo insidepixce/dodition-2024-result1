@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도디션 2024 2차 팀전 배치확인 </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('main.JPG');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Poor Story', sans-serif;
+            text-align: center;
+            color: black;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        h1 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .navbar {
+            background-color: #f8f9fa; /* 배경색은 같게 */
+            border-radius: 5px;
+            padding: 5px;
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 1px 2px;
+            border-radius: 5px;
+            background-color: #99ccff; /* 배경색은 같게 */
+            transition: background-color 0.3s;
+            margin: 2px 0; /* 각 링크 사이의 간격을 설정 */
+            margin-right: 0;
+        }
+
+        .navbar a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        #participantInput {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    font-family: 'Poor Story', sans-serif;
+    font-size: 16px;
+}
+
+#participantInput::placeholder {
+    color: #aaa;
+}
+
+
+        /* 미디어 쿼리 추가 */
+        @media screen and (max-width: 600px) {
+            .navbar {
+                padding: 5px; /* 작은 화면에서 네브바의 padding 조정 */
+            }
+
+            .navbar a {
+                padding: 8px 12px; /* 작은 화면에서 링크의 padding 조정 */
+                font-size: 14px; /* 작은 화면에서 링크의 글꼴 크기 조정 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>도디션 2024 2차 팀전 팀배치 확인</h1>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="navbar-nav">            
+                <a class="navbar-brand" href="index.html">도디션</a>
+                <a class="nav-link active" aria-current="page" href="results.html">패부 결과</a>
+                <a class="nav-link" href="participants.html">참가번호</a>
+                <a class="nav-link" href="upgrade.html">일정</a>
+                <a class="nav-link" href="putteam.html">팀배치</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 style="font-weight: bold;">참가번호를 입력하세요:</h2>
+        <form id="form">
+            <input type="text" id="participantInput" placeholder="참가번호를 입력하세요...">
+            <button type="submit">확인</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('form');
+        const participantInput = document.getElementById('participantInput');
+        const resultContainer = document.getElementById('result');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const participantNumber = participantInput.value.trim();
+            const teamMapping = {
+                "2": { "team": "1팀", "link": "https://open.kakao.com/o/gFizDsbg" },
+                "10": { "team": "1팀", "link": "https://open.kakao.com/o/gFizDsbg" },
+                "14": { "team": "1팀", "link": "https://open.kakao.com/o/gFizDsbg" },
+                "16": { "team": "1팀", "link": "https://open.kakao.com/o/gFizDsbg" },
+                "22": { "team": "1팀", "link": "https://open.kakao.com/o/gFizDsbg" },
+                "31": { "team": "1팀", "link": "https://open.kakao.com/o/gFizDsbg" },
+                "1": { "team": "2팀", "link": "https://open.kakao.com/o/gtIaEsbg" },
+                "7": { "team": "2팀", "link": "https://open.kakao.com/o/gtIaEsbg" },
+                "13": { "team": "2팀", "link": "https://open.kakao.com/o/gtIaEsbg" },
+                "18": { "team": "2팀", "link": "https://open.kakao.com/o/gtIaEsbg" },
+                "28": { "team": "2팀", "link": "https://open.kakao.com/o/gtIaEsbg" },
+                "36": { "team": "2팀", "link": "https://open.kakao.com/o/gtIaEsbg" },
+                "3": { "team": "3팀", "link": "https://open.kakao.com/o/g5cKEsbg" },
+                "9": { "team": "3팀", "link": "https://open.kakao.com/o/g5cKEsbg" },
+                "17": { "team": "3팀", "link": "https://open.kakao.com/o/g5cKEsbg" },
+                "25": { "team": "3팀", "link": "https://open.kakao.com/o/g5cKEsbg" },
+                "30": { "team": "3팀", "link": "https://open.kakao.com/o/g5cKEsbg" },
+                "34": { "team": "3팀", "link": "https://open.kakao.com/o/g5cKEsbg" },
+                "5": { "team": "4팀", "link": "https://open.kakao.com/o/gCN4Esbg" },
+                "8": { "team": "4팀", "link": "https://open.kakao.com/o/gCN4Esbg" },
+                "15": { "team": "4팀", "link": "https://open.kakao.com/o/gCN4Esbg" },
+                "20": { "team": "4팀", "link": "https://open.kakao.com/o/gCN4Esbg" },
+                "27": { "team": "4팀", "link": "https://open.kakao.com/o/gCN4Esbg" },
+                "38": { "team": "4팀", "link": "https://open.kakao.com/o/gCN4Esbg" },
+                "4": { "team": "5팀", "link": "https://open.kakao.com/o/g1wHFsbg" },
+                "12": { "team": "5팀", "link": "https://open.kakao.com/o/g1wHFsbg" },
+                "19": { "team": "5팀", "link": "https://open.kakao.com/o/g1wHFsbg" },
+                "24": { "team": "5팀", "link": "https://open.kakao.com/o/g1wHFsbg" },
+                "32": { "team": "5팀", "link": "https://open.kakao.com/o/g1wHFsbg" },
+                "26": { "team": "5팀", "link": "https://open.kakao.com/o/g1wHFsbg" },
+                "6": { "team": "6팀", "link": "https://open.kakao.com/o/g0v1Fsbg" },
+                "11": { "team": "6팀", "link": "https://open.kakao.com/o/g0v1Fsbg" },
+                "21": { "team": "6팀", "link": "https://open.kakao.com/o/g0v1Fsbg" },
+                "23": { "team": "6팀", "link": "https://open.kakao.com/o/g0v1Fsbg" },
+                "29": { "team": "6팀", "link": "https://open.kakao.com/o/g0v1Fsbg" },
+                "33": { "team": "6팀", "link": "https://open.kakao.com/o/g0v1Fsbg" },
+                        };
+
+            if (teamMapping[participantNumber]) {
+                const { team, link } = teamMapping[participantNumber];
+                resultContainer.innerHTML = `<p>당신은 ${team}입니다!</p><button onclick="window.location.href='${link}'">오픈채팅방 입장하기</button>`;
+
+            } else {
+                resultContainer.textContent = "참가번호가 올바르지 않습니다.";
+            }
+        });
+    </script>
+</body>
+</html>
