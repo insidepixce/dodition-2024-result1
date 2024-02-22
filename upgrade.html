@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>대회 스케쥴 공지</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>도디션 대회 스케쥴</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
     <style>
         body {
             background-image: url('main.JPG');
@@ -21,75 +23,61 @@
             margin: 20px auto;
             max-width: 600px;
         }
-        h2, p, #result, #welcome {
-            color: black;
+        h1 {
+            font-weight: bold;
+            margin-bottom: 20px;
         }
-        #form {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        #linkInput {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            width: 300px;
-            font-family: 'Poor Story', sans-serif;
-            font-size: 16px;
-        }
-        #linkInput::placeholder {
-            color: #aaa;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #99ccff; /* 빨간색 계열 */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none; /* 추가 */
-            display: inline-block; /* 추가 */
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #99ccff; /* 빨간색 계열 */
-        }
-        #welcome {
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        .success-box, .failure-box {
-            background-color: rgba(255, 255, 255, 0.8);
+        .navbar {
+            background-color: #f8f9fa; /* 배경색은 같게 */
             border-radius: 10px;
-            padding: 40px;
-            margin: 20px auto;
-            max-width: 600px;
-            display: none;
-        }
-        html, body {
-            height: 100%;
+            padding: 10px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
-
-        .container {
-            text-align: center;
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #99ccff; /* 배경색은 같게 */
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #007bff;
+            color: white;
         }
     </style>
 </head>
 <body>
+    <!-- 상단 네브바 -->
+
     <div class="container">
-        <p>2/20일 1차 탈락자 발표 / 팀 선정 시작</p>
-        <p>2/22일 10시 패자부활전 생존자 발표</p>
-        <p>2/22일 13시 최종 1차 탈락자 발표</p>
-        <p>2/23일 팀전 시작/ 발표<br>-아이브 멤버 1명을 맡아 도무송 6장 제출하기</p>
-        <p>3/1 마감</p>
-        <p>3/3 탈락자 발표</p>
-        <p>3/7 마지막 라운드 시작</p>
-        <p>3/15 최종 합격자 발표</p>
-        <button onclick="window.location.href = 'index.html';">뒤로가기</button>
+        <h1>도디션 2024 공식 사이트</h1>
     </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="navbar-nav">            
+                <a class="navbar-brand" href="index.html">도디션 2024 공식 사이트</a>
+                <a class="nav-link active" aria-current="page" href="results.html">패자부활전 결과 발표</a>
+                <a class="nav-link" href="participants.html">참가번호 조회하기</a>
+                <a class="nav-link" href="upgrade.html">일정 안내</a>
+            </div>
+        </div>
+    </nav>
+        <div class="container">
+            <h3> 
+                <p>2/20일 1차 탈락자 발표 / 팀 선정 시작</p>
+                <p>2/22일 10시 패자부활전 생존자 발표</p>
+                <p>2/22일 13시 최종 1차 탈락자 발표</p>
+                <p>2/23일 팀전 시작/ 발표<br>-아이브 멤버 1명을 맡아 도무송 6장 제출하기</p>
+                <p>3/1 마감</p>
+                <p>3/3 탈락자 발표</p>
+                <p>3/7 마지막 라운드 시작</p>
+                <p>3/15 최종 합격자 발표</p>
+            </h3>
+        </div>
+    
 </body>
 </html>
