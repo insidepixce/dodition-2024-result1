@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도디션 2024 1차 결과 확인</title>
+    <title>도디션 2024 1차 패자부활전 결과 확인</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
@@ -69,30 +69,41 @@
             max-width: 600px;
             display: none;
         }
+        .confirm-box {
+            display: none;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2 style="font-weight: bold;">도디션 2024 1차 결과 확인</h2>
-        <p>구글 폼 제출 때 업로드했던 오픈채팅 링크를 입력하세요.</p>
+        <p>구글 폼 제출 때 작성해주셨던 확인번호를 작성해주세요</p>
         <form id="form">
             <input type="text" id="linkInput" placeholder="링크를 입력하세요...">
             <button type="submit">확인</button>
         </form>
         <p id="result"></p>
-        <p id="welcome">도디션에 참여하신 도아너 여러분들 모두 환영합니다!<br>
-        도디션 관리자 계정으로 제출하신 도아너 분들은 도디션 관리자 계정으로 한 번 더 메세지 주시면 합불 결과 알려드리도록 하겠습니다.</p>
+        <p id="welcome">도디션 패자부활전에 다시한번 지원해주셔서 감사합니다!<br>
+        여러분들께서 적어주신 확인코드를 입력해주시면 합불결과가 조회됩니다</p>
         <button onclick="window.location.href = 'index.html';">뒤로가기</button>
     </div>
 
     <div class="success-box" id="successBox">
-        <h2 style="color: black;">합격입니다!</h2>
+        <h2 style="color: black;">합격입니다! 축하드려요 </h2>
+        <p id="participantNumber"></p>
         <a href="https://forms.gle/Wd7bPmn3zxSfQMDN8"><button>다음 미션 보러가기</button></a>
     </div>
 
     <div class="failure-box" id="failureBox">
-        <h2 style="color: black;">아쉽지만 탈락입니다. 여기서 탈락이라고 뜨셨다고 해도 참가번호 조회에 이름이 있으시다면 합격입니다 !</h2>
-        <a href="https://forms.gle/PYaeZmue74xAvMK86"><button>패자부활전 신청하기</button></a>
+        <h2 style="color: black;">아쉽지만 탈락입니다.다음 기회에 만나요!</h2>
+        <button onclick="window.location.href = 'index.html';">뒤로가기</button>
+    </div>
+
+    <div class="confirm-box" id="confirmBox">
+        <h2 id="confirmMessage"></h2>
+        <button onclick="confirmResult(true)">네</button>
+        <button onclick="confirmResult(false)">아니요</button>
     </div>
 
     <script>
@@ -101,44 +112,42 @@
         const resultMessage = document.getElementById('result');
         const successBox = document.getElementById('successBox');
         const failureBox = document.getElementById('failureBox');
+        const confirmBox = document.getElementById('confirmBox');
+        const participantNumberMessage = document.getElementById('participantNumber');
+        const confirmMessage = document.getElementById('confirmMessage');
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
             const inputLink = linkInput.value.trim();
-            const links = [
-                "https://open.kakao.com/o/s9o0oZSf",
-                "https://open.kakao.com/me/yuki_xnn",
-                "https://open.kakao.com/o/skgl0iGf",
-                "https://open.kakao.com/me/lovedive_O7",
-                "https://open.kakao.com/o/s7vBHX3f",
-                "https://open.kakao.com/o/sUgKIVRe",
-                "https://open.kakao.com/o/sZhpJBWf",
-                "https://open.kakao.com/o/s6wo7G6f",
-                "https://open.kakao.com/me/Lucky_Hong",
-                "https://open.kakao.com/o/sZOsZStf",
-                "https://open.kakao.com/o/sypT01Ed",
-                "https://open.kakao.com/o/spfG9IZd",
-                "https://open.kakao.com/o/sOz0KWNf",
-                "https://open.kakao.com/o/syHQVn8f",
-                "https://open.kakao.com/o/sxTAQ7Pf",
-                "https://open.kakao.com/o/sjLB6SIe",
-                "https://open.kakao.com/me/Gaeunn",
-                "https://open.kakao.com/o/s7WWLRse",
-                "https://open.kakao.com/o/s1wYgATf",
-                "https://open.kakao.com/o/s8aJKTZf",
-                "https://open.kakao.com/o/sli89WCf",
-                "https://open.kakao.com/o/sli89WCf",
-                "https://open.kakao.com/me/Leet0221",
-                "https://open.kakao.com/o/sIIn7R9c"
+            const validLinks = [
+                "1121",
+                "0222"
             ];
-            const isValidLink = links.includes(inputLink);
-            if (isValidLink) {
-                successBox.style.display = "block";
+            if (validLinks.includes(inputLink)) {
+                confirmBox.style.display = "block";
+                if (inputLink === "1121") {
+                    confirmMessage.textContent = "맂깅 님이 맞으십니까?";
+                } else if (inputLink === "0222") {
+                    confirmMessage.textContent = "설빈 님이 맞으십니까?";
+                }
             } else {
                 failureBox.style.display = "block";
                 resultMessage.textContent = "탈락입니다.";
             }
         });
+
+        function confirmResult(isConfirmed) {
+            confirmBox.style.display = "none";
+            if (isConfirmed) {
+                const inputLink = linkInput.value.trim();
+                if (inputLink === "1121") {
+                    participantNumberMessage.textContent = "참가번호는 34번입니다.";
+                } else if (inputLink === "0222") {
+                    participantNumberMessage.textContent = "참가번호는 37번입니다.";
+                }
+                successBox.style.display = "block";
+            }
+        }
     </script>
 </body>
 </html>
