@@ -1,8 +1,12 @@
 /* styles.css */
-/* styles.css */
 
 body {
+    background-image: url('../assets/images/main.JPG');
+    background-size: cover;
+    background-position: center;
     font-family: 'Poor Story', sans-serif;
+    text-align: center;
+    color: black;
 }
 
 .container,
@@ -21,15 +25,6 @@ td,
 .failure-box,
 .confirm-box {
     font-family: 'Poor Story', sans-serif;
-}
-
-body {
-    background-image: url('../assets/images/main.JPG');
-    background-size: cover;
-    background-position: center;
-    font-family: 'Poor Story', sans-serif;
-    text-align: center;
-    color: black;
 }
 
 .container {
@@ -159,21 +154,6 @@ tr:nth-child(even) {
 tr:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
-
-#participantInput {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    width: 300px;
-    font-family: 'Poor Story', sans-serif;
-    font-size: 16px;
-}
-
-#participantInput::placeholder {
-    color: #aaa;
-}
-
-/* 이 코드를 기존의 CSS 코드 아래에 추가해주세요 */
 
 #welcome {
     font-size: 18px;
