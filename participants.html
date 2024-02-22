@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>참가자 목록</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>도디션 2024 1차 패자부활전 결과 확인</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
     <style>
         body {
             background-image: url('main.JPG');
@@ -21,80 +23,80 @@
             margin: 20px auto;
             max-width: 600px;
         }
-        h2, p, #result, #welcome {
-            color: black;
+        h1 {
+            font-weight: bold;
+            margin-bottom: 20px;
         }
-        #form {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        #linkInput {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            width: 300px;
-            font-family: 'Poor Story', sans-serif;
-            font-size: 16px;
-        }
-        #linkInput::placeholder {
-            color: #aaa;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #99ccff; /* 빨간색 계열 */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none; /* 추가 */
-            display: inline-block; /* 추가 */
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #99ccff; /* 빨간색 계열 */
-        }
-        #welcome {
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        .success-box, .failure-box {
-            background-color: rgba(255, 255, 255, 0.8);
+        .navbar {
+            background-color: #f8f9fa; /* 배경색은 같게 */
             border-radius: 10px;
-            padding: 40px;
-            margin: 20px auto;
-            max-width: 600px;
-            display: none;
-        }
-
-        html, body {
-            height: 100%;
+            padding: 10px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #99ccff; /* 배경색은 같게 */
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        /* 스타일 추가 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
 
-        .container {
-            text-align: center;
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.4);
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <h1>도디션 2024 공식 사이트</h1>
+    </div>
+    <!-- 상단 네브바 -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="navbar-nav">            
+                <a class="navbar-brand" href="index.html">도디션 2024 공식 사이트</a>
+                <a class="nav-link active" aria-current="page" href="results.html">패자부활전 결과 발표</a>
+                <a class="nav-link" href="participants.html">참가번호 조회하기</a>
+                <a class="nav-link" href="upgrade.html">일정 안내</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
         <h2>참가자 목록(현재 생존자 명단)</h2>
         <table>
-            <tr>
-                <th>번호</th>
-                <th>이름</th>
-            </tr>
             <tr>
                 <td><a href="#" onclick="showNumber('01')">01</a></td>
                 <td>가은</td>
                 <td><a href="#" onclick="showNumber('02')">02</a></td>
                 <td>로하</td>
-            </tr>
-            <tr>
                 <td><a href="#" onclick="showNumber('03')">03</a></td>
                 <td>규</td>
                 <td><a href="#" onclick="showNumber('04')">04</a></td>
@@ -105,8 +107,6 @@
                 <td>우연</td>
                 <td><a href="#" onclick="showNumber('06')">06</a></td>
                 <td>채현</td>
-            </tr>
-            <tr>
                 <td><a href="#" onclick="showNumber('07')">07</a></td>
                 <td>레설</td>
                 <td><a href="#" onclick="showNumber('08')">08</a></td>
@@ -117,8 +117,6 @@
                 <td>밍키</td>
                 <td><a href="#" onclick="showNumber('10')">10</a></td>
                 <td>홍씨</td>
-            </tr>
-            <tr>
                 <td><a href="#" onclick="showNumber('11')">11</a></td>
                 <td>다인</td>
                 <td><a href="#" onclick="showNumber('12')">12</a></td>
@@ -129,8 +127,6 @@
                 <td>마토</td>
                 <td><a href="#" onclick="showNumber('14')">14</a></td>
                 <td>망굼이자공백</td>
-            </tr>
-            <tr>
                 <td><a href="#" onclick="showNumber('15')">15</a></td>
                 <td>보아</td>
                 <td><a href="#" onclick="showNumber('16')">16</a></td>
@@ -141,20 +137,16 @@
                 <td>유아</td>
                 <td><a href="#" onclick="showNumber('18')">18</a></td>
                 <td>설빈</td>
-            </tr>
-            <tr>
                 <td><a href="#" onclick="showNumber('19')">19</a></td>
                 <td>아이브 여섯명의 약혼녀</td>
                 <td><a href="#" onclick="showNumber('20')">20</a></td>
                 <td>오트 채은</td>
             </tr>
             <tr>
-                <td><a href="#" onclick="showNumber('36')">21</a></td>
+                <td><a href="#" onclick="showNumber('21')">21</a></td>
                 <td>밍서</td>
                 <td><a href="#" onclick="showNumber('22')">22</a></td>
                 <td>유키</td>
-            </tr>
-            <tr>
                 <td><a href="#" onclick="showNumber('23')">23</a></td>
                 <td>이브</td>
                 <td><a href="#" onclick="showNumber('24')">24</a></td>
@@ -165,8 +157,6 @@
                 <td>체리+특문</td>
                 <td><a href="#" onclick="showNumber('26')">26</a></td>
                 <td>체리</td>
-            </tr>
-            <tr>
                 <td><a href="#" onclick="showNumber('27')">27</a></td>
                 <td>최헬린</td>
                 <td><a href="#" onclick="showNumber('28')">28</a></td>
@@ -177,8 +167,6 @@
                 <td>키레</td>
                 <td><a href="#" onclick="showNumber('30')">30</a></td>
                 <td>팥옹심이이다</td>
-            </tr>
-            <tr>
                 <td><a href="#" onclick="showNumber('31')">31</a></td>
                 <td>푸름이</td>
                 <td><a href="#" onclick="showNumber('32')">32</a></td>
@@ -189,24 +177,12 @@
                 <td>예니</td>
                 <td><a href="#" onclick="showNumber('34')">34</a></td>
                 <td>김단쵸</td>
-            </tr>
-            <tr>
                 <td><a href="#" onclick="showNumber('35')">35</a></td>
                 <td>레유</td>
-                <td><a href="#" onclick="showNumber('35')">36</a></td>
-                <td> 플으슬</td>
-            </tr>
+                <td><a href="#" onclick="showNumber('36')">36</a></td>
+                <td>플으슬</td>
+            </tr> 
         </table>
-        <button onclick="window.location.href = 'index.html';">뒤로가기</button>
     </div>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p id="participantNumber"></p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

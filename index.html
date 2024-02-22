@@ -28,9 +28,12 @@
             margin-bottom: 20px;
         }
         .navbar {
-            display: flex;
-            justify-content: space-around;
+            background-color: #f8f9fa; /* 배경색은 같게 */
+            border-radius: 10px;
+            padding: 10px;
             margin-top: 20px;
+            display: flex;
+            justify-content: center;
         }
         .navbar a {
             text-decoration: none;
@@ -38,7 +41,7 @@
             font-weight: bold;
             padding: 10px 20px;
             border-radius: 5px;
-            background-color: #99ccff;
+            background-color: #99ccff; /* 배경색은 같게 */
             transition: background-color 0.3s;
         }
         .navbar a:hover {
@@ -48,22 +51,30 @@
     </style>
 </head>
 <body>
+    <!-- 상단 네브바 -->
+
     <div class="container">
         <h1>도디션 2024 공식 사이트</h1>
-        <nav class="navbar">
-            <a href="results.html">패자부활전 결과 발표</a>
-            <a href="participants.html">참가번호 조회하기</a>
-            <a href="upgrade.html">일정 안내</a>
-        </nav>
     </div>
-    <div class="container">
-        <h3>안녕하세요, 도디션 개최자 꿀떨입니다!<br>도디션에 지원해주셔서 감사합니다. <br>
-            그동안 여러 일들이 있었던지라 이제서야 제대로 운영을 하고 있습니다. <br>
-            양해해주신 여러분께 감사의 말씀 올립니다 <br>
-            1차 패자부활전 결과는 2024년 2월 23일에 발표될 예정입니다. <br>
-            결과 발표는 공식 홈페이지를 통해 확인하실 수 있습니다. <br>
-            참가자 여러분들의 많은 관심 부탁드립니다. 감사합니다.<br>
-        </h3>
-    </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="navbar-nav">            
+                <a class="navbar-brand" href="index.html">도디션 2024 공식 사이트</a>
+                <a class="nav-link active" aria-current="page" href="results.html">패자부활전 결과 발표</a>
+                <a class="nav-link" href="participants.html">참가번호 조회하기</a>
+                <a class="nav-link" href="upgrade.html">일정 안내</a>
+            </div>
+        </div>
+    </nav>
+        <div class="container">
+            <h3>안녕하세요, 도디션 개최자 꿀떨입니다!<br>도디션에 지원해주셔서 감사합니다. <br>
+                그동안 여러 일들이 있었던지라 이제서야 제대로 운영을 하고 있습니다. <br>
+                양해해주신 여러분께 감사의 말씀 올립니다 <br>
+                1차 패자부활전 결과는 2024년 2월 23일에 발표될 예정입니다. <br>
+                결과 발표는 공식 홈페이지를 통해 확인하실 수 있습니다. <br>
+                참가자 여러분들의 많은 관심 부탁드립니다. 감사합니다.<br>
+            </h3>
+        </div>
+    
 </body>
 </html>
